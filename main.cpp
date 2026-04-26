@@ -207,7 +207,7 @@ int main() {
 
     // ------------------------------------------------------
     // STUDENT WORK:
-    // If found, print the path
+    // If found, print the path.
     // ------------------------------------------------------
      if (found) {
          printPath(exitcell, parent_r, parent_c, ent_r, ent_c);
