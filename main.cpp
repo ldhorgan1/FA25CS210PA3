@@ -128,7 +128,7 @@ bool dfs(int r, int c,
     int M = maze[0].size();
 
     if (r < 0 || r >= N || c < 0 || c >= M) {
-        return false;
+       return false;
     }
 
     if (maze[r][c] == 1) {
@@ -139,29 +139,6 @@ bool dfs(int r, int c,
         return false;
     }
 
-    visited[r][c] = true;
-
-    if (r == exit_r && c == exit_c) {
-        return true;
-    }
-
-    for (int i = 0; i < 4; i++) {
-        int next_r = r + dr[i];
-        int nc = c + dc[i];
-
-        if (next_r >= 0 && next_r < N && nc >= 0 && nc < M &&
-            maze[next_r][nc] == 0 && !visited[next_r][nc]) {
-
-            parent_r[next_r][nc] = r;
-            parent_c[next_r][nc] = c;
-
-            if (dfs(next_r, nc, maze, visited, parent_r, parent_c, exit_r, exit_c)) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
 
 
 
